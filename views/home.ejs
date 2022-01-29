@@ -1,0 +1,38 @@
+<!--This is the home page file-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>URL Shortener</title>
+  <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--CSS-->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card text-center url-card">
+      <div class="card-header">
+        <h1>URL Shortener</h1>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Create a Short URL for your long URL</h5>
+        <!--After the long URL is posted, it is sent for the generation of the shortURL-->
+        <form class="form" action="/create-short-url" method="post">
+          <div class="form-group">
+            <label for="url-long">Enter Long URL</label>
+            <input type="text" class="form-control" id="url-long" name="longurl" placeholder="https://site.com">
+          </div>
+          <div class="form-group">
+            <input type="submit" class="form-control btn btn-info" value="Create Short URL">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

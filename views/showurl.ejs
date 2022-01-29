@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Shortened URL</title>
+  <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--CSS-->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <div class="container result">
+    <h1>Result of the URL Shortener</h1>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Shortened URL</h5>
+        <p class="card-text">Long URL : <%= resultUrl.longUrl %></p>
+        <p>Short URL : <a target="_blank" href="http://localhost:3000/show/<%= resultUrl.shortUrl %>" class="card-link">http://localhost:3000/show/<%= resultUrl.shortUrl %></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="button">
+    <button type="button" name="button" class="btn btn-dark">
+      <a href="http://localhost:3000">Home</a>
+    </button>
+
+  </div>
+</body>
+
+</html>

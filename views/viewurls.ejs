@@ -1,0 +1,56 @@
+<!--This is the EJS file to print all the URL sets in the Database-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Views</title>
+  <!--Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="viewsheader">
+      <h1>URL Data</h1>
+    </div>
+  </header>
+  <!--Table to print all the URL sets in the Database-->
+  <div class="viewstable">
+    <table class="table table-hover table-bordered table-striped">
+      <thead class="thead-dark">
+        <!--Column Names of the table-->
+        <tr>
+          <th scope="col">Sl.No</th>
+          <th scope="col">Long URL</th>
+          <th scope="col">Short URL</th>
+          <th scope="col">Click Count</th>
+          <th scope="col">Delete Option</th>
+        </tr>
+      </thead>
+      <!--Each and every row rendered from the Database is being printed-->
+      <% for(let i=0;i<urlResult.length;i++) { %>
+      <tbody>
+        <tr>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= urlResult[i].longUrl %></td>
+          <td><a target="_blank" href="http://localhost:3000/show/<%= urlResult[i].shortUrl %>">http://localhost:3000/show/<%= urlResult[i].shortUrl %></a></td>
+          <td><%= urlResult[i].clickCount %></td>
+          <td><a href="/delete/<%= urlResult[i].id %>" class="btn btn-danger">Delete URL</a></td>
+        </tr>
+      </tbody>
+      <% } %>
+    </table>
+  </div>
+  <div class="button">
+    <button type="button" name="button" class="btn btn-dark">
+      <a href="http://localhost:3000">Home</a>
+    </button>
+
+  </div>
+
+</body>
+
+</html>
